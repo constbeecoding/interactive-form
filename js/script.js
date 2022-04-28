@@ -8,14 +8,14 @@ const nameInput = document.getElementById('name').focus();
 When a change is detected, display/hide the "text field" based on the user’s selection in the drop down menu. (Hidden unless other is selected)
 */
 
-const otherJob = document.getElementById('other-job-role').style.visibility = 'hidden';
+const otherJob = document.getElementById('other-job-role').style.display = 'none';
 const jobRole = document.getElementById('title');
 
 jobRole.addEventListener('change', (event) => {
     if (event.target.value === 'other') {
-        otherJob.style.visibility = 'visible';
+      otherJob.style.display = 'block';
     } else {
-        return otherJob;
+      return otherJob;
     }
 });
 
@@ -23,9 +23,12 @@ console.log(jobRole);
 console.log(otherJob);
 /*
 T-SHIRT INFO SECTION
-The options in the "Color" drop down menu are not available for each t-shirt design. So the user shouldn’t be able to see or choose a color option until they have chosen a design.
+The options in the "Color" drop down menu are not available for each t-shirt design. 
+So the user shouldn’t be able to see or choose a color option until they have chosen a design.
 
 * Disable the "Color" <select> element.
+
+
 * Program the "Design" <select> element to listen for user changes. When a change is detected:
 	- The "Color" <select> element should be enabled.
 	- The "Color" <select> element should display an available color.
@@ -40,6 +43,34 @@ The options in the "Color" drop down menu are not available for each t-shirt des
 		The hidden attribute can prevent option elements from being displayed in the drop down menu.
 */ 
 
+const designSelect = document.getElementById('design');
+const colorOption = document.getElementById('color').children;
+const colorSelect = document.getElementById('color').disabled = true;
+
+designSelect.addEventListener('change', (e) => {
+  const colorSelect = document.getElementById('color').disabled = false;
+
+  for (let i = 0; i < colorOption.length; i++) {
+    const eventTarget = e.target.value;
+    // data-theme attribute of the loop's current option element
+    const getDataTheme = colorOption.dataset.theme;
+    console.log(getDataTheme);
+    console.log(eventTarget);
+  }
+});
+// if option value js puns is selected display JS PUNS
+// if option value heart js is selected display I ♥ JS
+
+
+// if (designSelect.value === 'js puns') {
+//   colorSelect.style.display = 'block';
+// } else if (designSelect.value === 'heart js') {
+//   colorSelect.style.display = 'block';
+// }
+
+console.log(colorSelect);
+console.log(designSelect);
+console.log(colorOption);
 /*
 REGISTER FOR ACTIVITIES SECTION
 The "Total: $" element below the "Register for Activities" section should update to reflect the sum of the cost of the user’s selected activities.
