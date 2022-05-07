@@ -2,11 +2,7 @@
 
 const nameInput = document.getElementById('name').focus();
 
-/* JOB ROLE SECTION
-* Hides the "text field" with the id of "other-job-role" so it is not displayed when the form first loads.
-* Program the "Job Role" <select> element to listen for user changes. 
-When a change is detected, display/hide the "text field" based on the user’s selection in the drop down menu. (Hidden unless other is selected)
-*/
+// JOB ROLE SECTION
 
 const otherJob = document.getElementById('other-job-role').style.display = 'none';
 const jobRole = document.getElementById('title');
@@ -19,29 +15,7 @@ jobRole.addEventListener('change', (event) => {
     }
 });
 
-console.log(jobRole);
-console.log(otherJob);
-/*
-T-SHIRT INFO SECTION
-The options in the "Color" drop down menu are not available for each t-shirt design. 
-So the user shouldn’t be able to see or choose a color option until they have chosen a design.
-
-* Disable the "Color" <select> element.
-
-
-* Program the "Design" <select> element to listen for user changes. When a change is detected:
-	- The "Color" <select> element should be enabled.
-	- The "Color" <select> element should display an available color.
-	- The "Color" dropdown menu should display only the color options associated with the selected design. For example:
-    - If the user selects "Theme - JS Puns" then the "Color" menu should only display "Cornflower Blue," "Dark Slate Grey," and "Gold."
-    - If the user selects "Theme - I ♥ JS" then the "Color" menu should only display "Tomato," "Steel Blue," and "Dim Grey."
-
-		A select element is used for the color selection. There are two parts to a select element display: the element field and the drop down menu which opens after clicking on the field. Both the "Color" field and drop down menu must correctly update when the user selects a new theme. Neither should be empty or display unavailable colors.
-
-		Pro Tip:
-		The selected attribute can determine which option element is displayed in the select field.
-		The hidden attribute can prevent option elements from being displayed in the drop down menu.
-*/ 
+// T-SHIRT INFO SECTION 
 
 const designSelect = document.getElementById('design');
 const colorOption = document.getElementById('color').children;
@@ -52,25 +26,20 @@ designSelect.addEventListener('change', (e) => {
 
   for (let i = 0; i < colorOption.length; i++) {
     const eventTarget = e.target.value;
-    // data-theme attribute of the loop's current option element
-    const getDataTheme = colorOption.dataset.theme;
-    console.log(getDataTheme);
-    console.log(eventTarget);
+    const getDataTheme = colorOption[i].dataset.theme;
+
+    if (eventTarget === getDataTheme) {
+      colorOption[i].hidden = false;
+      eventTarget.hidden = false;
+      
+    } else {
+      colorOption[i].hidden = true;
+      eventTarget.hidden = true;
+    }
+  
   }
 });
-// if option value js puns is selected display JS PUNS
-// if option value heart js is selected display I ♥ JS
 
-
-// if (designSelect.value === 'js puns') {
-//   colorSelect.style.display = 'block';
-// } else if (designSelect.value === 'heart js') {
-//   colorSelect.style.display = 'block';
-// }
-
-console.log(colorSelect);
-console.log(designSelect);
-console.log(colorOption);
 /*
 REGISTER FOR ACTIVITIES SECTION
 The "Total: $" element below the "Register for Activities" section should update to reflect the sum of the cost of the user’s selected activities.
@@ -80,6 +49,11 @@ The "Total: $" element below the "Register for Activities" section should update
 * If an activity is unchecked, the total cost should decrease by that amount.
 * The <p> element with the id of "activity-cost" below the activities section should update to reflect the chosen activities' total cost.
 */
+
+
+
+
+
 
 /*
 PAYMENT INFO SECTION
