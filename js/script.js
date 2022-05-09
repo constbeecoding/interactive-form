@@ -50,7 +50,27 @@ The "Total: $" element below the "Register for Activities" section should update
 * The <p> element with the id of "activity-cost" below the activities section should update to reflect the chosen activities' total cost.
 */
 
+const activities = document.getElementById('activities');
+const activitiesCost = document.getElementById('activities-cost');
+//const activitiesList = activities.querySelectorAll('input');
+const activitiesTotal = 0;
 
+activities.addEventListener('change', (event) => {
+
+  const dataCost = parseInt(event.target.dataset.cost); 
+
+  console.log(dataCost);
+  // console.log(typeof dataCost);
+
+  if (event.target.value === 'checked') {
+    activitiesTotal + dataCost;
+  } else {
+    activitiesTotal - dataCost;
+  }
+  activitiesCost.innerHTML = `Total: ${activitiesTotal}`;
+  console.log(activitiesTotal);
+  console.log(activitiesCost.innerHTML);
+});
 
 
 
