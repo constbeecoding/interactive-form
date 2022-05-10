@@ -67,9 +67,32 @@ The credit card payment option should be selected for the user by default. So wh
 * Program the "I'm going to pay with" <select> element to listen for user changes. When a change is detected, hide all payment sections in the form’s UI except the selected one.
 */
 
+const paymentMethod = document.getElementById('payment');
+const credit = document.getElementById('credit-card');
+const paypal = document.getElementById('paypal');
+const bitcoin = document.getElementById('bitcoin');
 
+paypal.style.display = 'none';
+bitcoin.style.display = 'none';
 
+paymentMethod.childNodes[3].selected = true;
 
+paymentMethod.addEventListener('change', (event) => {
+
+  if (event.target.value === 'paypal') {
+    credit.style.display = 'none';
+    paypal.style.display = 'block';
+    bitcoin.style.display = 'none';
+  } else if (event.target.value === 'bitcoin') {
+    credit.style.display = 'none';
+    paypal.style.display = 'none';
+    bitcoin.style.display = 'block';
+  } else {
+    credit.style.display = 'block';
+    bitcoin.style.display = 'none';
+    paypal.style.display = 'none';
+  }
+});
 /*
 FORM VALIDATION
 Users shouldn’t be able to submit a form without the required information, or with invalid information. To prevent that from happening, avoid using plugins, libraries, snippets or the built-in HTML5 validation, and create your own custom form validation.
