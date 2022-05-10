@@ -40,40 +40,25 @@ designSelect.addEventListener('change', (e) => {
   }
 });
 
-/*
-REGISTER FOR ACTIVITIES SECTION
-The "Total: $" element below the "Register for Activities" section should update to reflect the sum of the cost of the user’s selected activities.
-
-* Program the "Register for Activities" fieldset element to listen for user changes. When a change is detected:
-* If an activity is checked, the total cost should increase by the value in the data-cost attribute of the activity’s <input type="checkbox"> element.
-* If an activity is unchecked, the total cost should decrease by that amount.
-* The <p> element with the id of "activity-cost" below the activities section should update to reflect the chosen activities' total cost.
-*/
+//REGISTER FOR ACTIVITIES SECTION
 
 const activities = document.getElementById('activities');
 const activitiesCost = document.getElementById('activities-cost');
-//const activitiesList = activities.querySelectorAll('input');
-const activitiesTotal = 0;
+let activitiesTotal = 0;
 
 activities.addEventListener('change', (event) => {
 
   const dataCost = parseInt(event.target.dataset.cost); 
 
   console.log(dataCost);
-  // console.log(typeof dataCost);
 
-  if (event.target.value === 'checked') {
-    activitiesTotal + dataCost;
+  if (event.target.checked) {
+    activitiesTotal += dataCost;
   } else {
-    activitiesTotal - dataCost;
+    activitiesTotal -= dataCost;
   }
-  activitiesCost.innerHTML = `Total: ${activitiesTotal}`;
-  console.log(activitiesTotal);
-  console.log(activitiesCost.innerHTML);
+  activitiesCost.innerHTML = `Total: $${activitiesTotal}`;
 });
-
-
-
 
 /*
 PAYMENT INFO SECTION
