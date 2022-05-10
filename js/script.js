@@ -4,14 +4,15 @@ const nameInput = document.getElementById('name').focus();
 
 // JOB ROLE SECTION
 
-const otherJob = document.getElementById('other-job-role').style.display = 'none';
 const jobRole = document.getElementById('title');
+const otherJob = document.getElementById('other-job-role');
+otherJob.style.display = 'none';
 
 jobRole.addEventListener('change', (event) => {
     if (event.target.value === 'other') {
       otherJob.style.display = 'block';
     } else {
-      return otherJob;
+      otherJob.style.display = 'none';
     }
 });
 
@@ -65,6 +66,9 @@ The credit card payment option should be selected for the user by default. So wh
 
 * Program the "I'm going to pay with" <select> element to listen for user changes. When a change is detected, hide all payment sections in the form’s UI except the selected one.
 */
+
+
+
 
 /*
 FORM VALIDATION
