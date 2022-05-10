@@ -50,8 +50,6 @@ activities.addEventListener('change', (event) => {
 
   const dataCost = parseInt(event.target.dataset.cost); 
 
-  console.log(dataCost);
-
   if (event.target.checked) {
     activitiesTotal += dataCost;
   } else {
