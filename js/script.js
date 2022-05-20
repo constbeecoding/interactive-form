@@ -68,6 +68,7 @@ The credit card payment option should be selected for the user by default. So wh
 */
 
 const paymentMethod = document.getElementById('payment');
+const paymentOptions = document.querySelectorAll('#payment option');
 const credit = document.getElementById('credit-card');
 const paypal = document.getElementById('paypal');
 const bitcoin = document.getElementById('bitcoin');
@@ -75,22 +76,34 @@ const bitcoin = document.getElementById('bitcoin');
 paypal.style.display = 'none';
 bitcoin.style.display = 'none';
 
+console.log(paymentOptions);
+
 paymentMethod.childNodes[3].selected = true;
 
-paymentMethod.addEventListener('change', (event) => {
+// paymentMethod.addEventListener('change', (event) => {
 
-  if (event.target.value === 'paypal') {
-    credit.style.display = 'none';
-    paypal.style.display = 'block';
-    bitcoin.style.display = 'none';
-  } else if (event.target.value === 'bitcoin') {
-    credit.style.display = 'none';
-    paypal.style.display = 'none';
-    bitcoin.style.display = 'block';
-  } else {
-    credit.style.display = 'block';
-    bitcoin.style.display = 'none';
-    paypal.style.display = 'none';
+//   if (event.target.value === 'paypal') {
+//     credit.style.display = 'none';
+//     paypal.style.display = 'block';
+//     bitcoin.style.display = 'none';
+//   } else if (event.target.value === 'bitcoin') {
+//     credit.style.display = 'none';
+//     paypal.style.display = 'none';
+//     bitcoin.style.display = 'block';
+//   } else {
+//     credit.style.display = 'block';
+//     bitcoin.style.display = 'none';
+//     paypal.style.display = 'none';
+//   }
+// });
+
+paymentMethod.addEventListener('change', (e) => {
+  for(let i = 0; i < paymentOptions.length; i++) {
+    if(paymentOptions === e.target.value) {
+      `${paymentOptions[i]}`.style.display = 'block';
+    } else {
+      `${paymentOptions[i]}`.style.display = 'none';
+    }
   }
 });
 /*
