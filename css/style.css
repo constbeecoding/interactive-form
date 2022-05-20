@@ -226,6 +226,7 @@ button:hover {
 
 .asterisk {
   vertical-align: sub;
+  color: red;
 }
 
 .valid {
