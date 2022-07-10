@@ -1,0 +1,43 @@
+/* ================================= 
+  Payment section styles
+==================================== */
+
+.payment-methods {
+    margin-top: 55px;
+  }
+  
+  .payment-method-box label {
+    margin-top: 20px;
+  }
+  
+  .credit-card {
+    margin-bottom: 25px;
+  }
+  
+  .paypal,
+  .bitcoin {
+    margin: 20px auto 10px auto;
+    padding: 0 15px;
+    background: rgb(255, 253, 249);
+    border-radius: 3px;
+    border: 1px solid rgba(36, 28, 21, 0.2);
+  }
+  
+  .paypal h3,
+  .bitcoin h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .paypal p,
+  .bitcoin p {
+    color: rgba(0, 0, 0, 0.8);
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .credit-card,
+  .paypal,
+  .bitcoin {
+    transition: all 0.3s ease-out;
+  }

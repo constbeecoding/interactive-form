@@ -1,0 +1,109 @@
+/* ================================= 
+  Activity section styles
+==================================== */
+
+.activities {
+    position: relative;
+    max-width: calc(100% - 30px);
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin: 35px 15px 0px;
+  }
+  
+  .activities-box {
+    font-family: 'roboto', sans-serif;
+    max-width: 100%;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-out;
+  }
+  
+  .activities legend {
+    margin-bottom: 15px;
+  }
+  
+  .activities label {
+    cursor: pointer;
+    position: relative;
+    background: rgba(218, 174, 81, 0.1);
+    background: rgb(255, 253, 249);
+    padding: 15px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(36, 28, 21, 0.2);
+    transition: all 0.3s ease-out;
+  }
+  
+  .activities label:nth-of-type(1) {
+    height: 107px;
+    margin-top: 0;
+  }
+  
+  .activities label:last-child {
+    margin-bottom: 0;
+  }
+  
+  .activities label input {
+    margin: 7px auto 7px 7px;
+  }
+  
+  .activities label span:nth-of-type(1) {
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: bolder;
+    padding-left: 7px;
+  }
+  
+  .activities label span:nth-of-type(2),
+  .activities label span:nth-of-type(3) {
+    font-size: 0.9rem;
+    margin: 7px auto;
+    padding-left: 30px;
+  }
+  
+  .activities label span:nth-of-type(2) {
+    display: block;
+    margin-top: 30px;
+  }
+  
+  .activity-cost {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: bolder;
+  }
+  
+  .activity-img {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 25px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .npm-img {
+    top: 5px;
+    right: 12px;
+    width: 50px;
+  }
+  
+  .node-img {
+    top: 15px;
+  }
+  
+  .express-img {
+    top: 20px;
+  }
+  
+  .activities-cost {
+    color: black;
+    font-size: 1.5rem;
+    margin-right: -10px;
+    margin-bottom: 5px;
+  }
+  
+  .activities-hint {
+    margin-top: 10px;
+  }

@@ -1,0 +1,158 @@
+/* ================================= 
+  Media queries styles
+==================================== */
+@media (min-width: 768px) {
+
+    header {
+      text-align: left;
+      padding: 25px 0;
+    }
+  
+    .header-container {
+      padding-left: 15px;
+    }
+  
+    form {
+      padding-top: 25px;
+    }
+  
+    button {
+      text-align: left;
+      width: 155px;
+      height: 50px;
+      margin: 0px 0 100px 15px;
+    }
+  
+    /* ================================= 
+      768px - Basic info and t shirt section styles
+    ==================================== */
+  
+    .basic-info-and-shirt-box {
+      position: relative;
+      padding: 15px;
+    }
+  
+    .basic-info-and-shirt-box fieldset {
+      margin: 10px 0;
+    }
+  
+    .other-job-role {
+      position: absolute;
+      right: 10px;
+      bottom: 25px;
+      max-width: 50%;
+    }
+  
+    .basic-info{
+      max-width: 350px;
+      padding: 0;
+    }
+  
+    .shirts {
+      max-width: 325px;
+      padding: 0;
+    }
+  
+    /* ================================= 
+      768px - Activity section styles
+    ==================================== */
+  
+    .activities {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .activities-box {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      transition: all 0.3s;
+    }
+  
+    .activities label {
+      width: 49%;
+      margin: 8px auto;
+    }
+  
+    .activities label:first-of-type {
+      width: 100%;
+    }
+  
+    .activities label:nth-of-type(even) {
+      margin-left: 0;
+    }
+  
+    .activities label:nth-of-type(odd) {
+      margin-right: 0;
+    }
+  
+    .activities label:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
+  
+    .activities-cost {
+      position: absolute;
+      font-weight: bolder;
+      right: 15px;
+    }
+  
+    /* ================================= 
+      768px - Payment section styles
+    ==================================== */
+  
+    .payment-methods {
+      position: relative;
+      padding: 10px;
+    }
+  
+    .payment-method-box {
+      width: 375px;
+    }
+  
+    .credit-card-box {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+  
+    .num-box {
+      width: 375px;
+    }
+  
+    .zip-box {
+      width: 190px;
+    }
+  
+    .cvv-box {
+      width: 160px;
+    }
+  
+    .expiration-box {
+      position: absolute;
+      right: 10px;
+      top: 30px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 47%;
+    }
+  
+    /* Mozilla specific style for expiration date container to accomplish cross browser styles */
+    @-moz-document url-prefix() {
+      .expiration-box {
+        top: 30px;
+      }
+    }
+  
+    .expiration-box label {
+      margin-top: 0;
+    }
+  
+    .month-box {
+      width: 190px;
+    }
+  
+    .year-box {
+      width: 160px;
+    }
+  }

@@ -1,0 +1,13 @@
+/* ================================= 
+  Helper class styles
+==================================== */
+
+.focus {
+    background: rgba(255, 255, 255, 1) !important;
+    border-color:  rgb(9, 73, 250) !important;
+  }
+  
+  .disabled {
+    cursor: not-allowed !important;
+    background: rgba(197, 163, 175, 0.1) !important;
+  }

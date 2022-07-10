@@ -1,0 +1,36 @@
+/* ================================= 
+  Basic info and t shirt styles
+==================================== */
+
+.basic-info-and-shirt-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  
+  
+  .basic-info {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+  
+  .shirt-div-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  
+  .shirt-sizes {
+    width: 25%;
+    min-width: 75px;
+  }
+  
+  .shirt-designs {
+    width: 70%;
+    min-width: 210px;
+  }
+  
+  .shirt-colors {
+    width: 100%;
+  }

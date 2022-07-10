@@ -1,0 +1,61 @@
+/* ============================================ */
+/*                Base Styles                   */
+/* ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+	width: 100%;
+	min-height: 100%;
+}
+
+body,
+input,
+button {
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+  background: rgba(218, 174, 81, 0.1);
+}
+
+header {
+	text-align: center;
+	color: rgb(255, 255, 255);
+	width: 100%;
+	padding: 10px 0;
+    background-image: 
+    url("../../img/stars.png"),
+    linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(60, 38, 108) 100%);
+}
+
+.header-container {
+	max-width: 800px;
+	margin: 10px auto;
+}
+
+h1 {
+	font-size: 2.5em;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.65);
+	margin: 0;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}

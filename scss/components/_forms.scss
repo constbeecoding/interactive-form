@@ -1,0 +1,218 @@
+/* ============================================ */
+/*                Form Styles                   */
+/* ============================================ */
+
+form {
+	display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10px;
+	border-radius: 3px;
+}
+
+fieldset {
+  width: calc(100% - 10px);
+  margin: 35px auto 10px;
+  border: none;
+}
+
+legend,
+button {
+	font-size: 1.25em;	
+}
+
+legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  transition: all 0.3s ease-out;
+}
+
+input[type="text"],
+input[type="email"],
+legend {
+	width: 100%;
+}
+
+label {
+  display: block;
+  color: rgb(0, 0, 0);
+  margin-top: 27px;
+  margin-bottom: 0;
+  transition: all 0.3s ease-out;
+}
+
+input,
+select {
+	margin-bottom: 1.125em;	
+}
+
+input, 
+select, 
+option {
+  font-family: 'roboto', sans-serif;
+  transition: all 0.3s ease-out;
+}
+
+input {
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.7);
+	font-weight: 500;
+	padding: .95em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background: rgb(255, 253, 249);
+	border: 1px solid rgba(36, 28, 21, 0.2);
+	border-radius: 2px;
+	outline: none;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color:  rgb(9, 73, 250);
+}
+
+input:-webkit-autofill {
+  border: 1px solid rgba(36, 28, 21, 0.2);
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 253, 249) inset;
+  box-shadow: 0 0 0px 1000px rgb(255, 253, 249) inset;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline-block;
+}
+
+input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+select {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+	font-size: 1em;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: .95em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+	padding-right: calc(4% + 0.95em);
+  background: url(../img/caret.png) calc(100% - 7px) 50% no-repeat rgb(255, 253, 249);
+	background-size: 12px auto;
+	border: 1px solid rgba(36, 28, 21, 0.2);
+	border-radius: 2px;
+	outline: none;
+  cursor: pointer;
+  transition: none;
+}
+
+select:focus {
+  background: url(../img/caret.png) calc(100% - 7px) 50% no-repeat rgba(255, 255, 255, 1) !important;
+  background-size: 12px auto !important;
+  border-color:  rgb(9, 73, 250);
+}
+
+select:disabled {
+  cursor: not-allowed;
+  background-color: rgba(197, 163, 175, 0.1);
+}
+
+input.error,
+select.error {
+	background: rgb(242, 112, 156, 0.1);
+	border: 1px solid rgb(242, 112, 156) ;
+}
+
+button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-shadow: 1px 1px 0 transparent;
+  letter-spacing: 0.1rem;
+  color: rgb(255, 255, 255);
+  width: calc(100% - 40px);
+  margin: 25px auto;
+  padding: 10px 25px;
+	background: rgb(60, 38, 108);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  border-right: 1px solid rgba(36, 28, 21, 0.2);
+  border-bottom: 1px solid rgba(36, 28, 21, 0.3);
+  box-shadow: none;
+	transition: all 0.3s ease-out;
+}
+
+button:hover {
+  background: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 25px rgb(60, 38, 108, 0.5) inset, 3px 3px 10px rgba(50, 50, 50, 0.3);
+  color:black;
+}
+
+.hint {
+  display: none;
+  color: red;
+  margin: 0;
+  transition: all 0.3s ease-out;
+}
+
+.form-hint {
+  color: rgb(0, 0, 0);
+  margin-bottom: 0;
+  margin-left: 17px;
+}
+
+.asterisk {
+  vertical-align: sub;
+  color: red;
+}
+
+.valid {
+  position: relative;
+}
+
+.not-valid {
+  position: relative;
+  color: red;
+}
+
+.not-valid .error-border {
+  border: 1px solid red;
+}
+
+.not-valid legend {
+  color: red;
+}
+
+.valid::after {
+  content: ' ';
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  width: 25px;
+  height: 25px;
+  background-image: url('../img/valid.svg');
+  background-size: 25px;
+  transition: all 0.3s ease-out;
+}
+
+.not-valid::after {
+  content: ' ';
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  width: 25px;
+  height: 25px;
+  background-image: url('../img/not-valid.svg');
+  background-size: 25px;
+  transition: all 0.3s ease-out;
+}
+
+.activities.valid::after,
+.activities.not-valid::after {
+  top: 5px;
+}
