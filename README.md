@@ -17,8 +17,8 @@ Check out project files if you want to view simple pagination with user data.
 .
 
 ├── css                     css folder
-|   └── normalize.css
-|   └── styles.css
+|   └── style.css
+|   └── style.css.map
 ├── img                     img folder
 |   └── angular.svg
 |   └── build.svg
@@ -29,7 +29,23 @@ Check out project files if you want to view simple pagination with user data.
 |   └── not-valid.svg
 |   └── npm.svg
 |   └── react.svg
+|   └── stars.png
 |   └── valid.svg
+├── js                      js folder
+|   └── script.js
+├── scss                    scss folder
+|   ├── base
+|   |   └── _base-index.scss
+|   |   └── _base-styles.scss
+|   |   └── _normalize.scss
+|   ├── components
+|   |   └── _activities.scss
+|   |   └── _basic-tshirt.scss
+|   |   └── _components-index.scss
+|   |   └── _forms.scss
+|   |   └── _helpers.scss
+|   |   └── _media-queries.scss
+|   |   └── _payments.scss
 ├── index.html              base html file
 └── README.md               (You are here) Readme.md file
 ```
