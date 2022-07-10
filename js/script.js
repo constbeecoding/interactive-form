@@ -70,8 +70,6 @@ const bitcoin = document.getElementById('bitcoin');
 paypal.style.display = 'none';
 bitcoin.style.display = 'none';
 
-console.log(paymentOptions);
-
 paymentMethod.childNodes[3].selected = true;
 
 paymentMethod.addEventListener('change', (event) => {
@@ -124,21 +122,59 @@ console.log(cvvNumber);
 console.log(formElement);
 
 
-formElement.addEventListener('submit', (event) => {
+/* Helper function to validate name input */
+const nameValidator = () => {
 
-  const validName = emailInput.value[1];
-  const nameRegex = /(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/;
+  const validName = nameInput.value; 
+  const nameIsValid = /^[a-zA-Z]+ ?[a-zA-Z]*? ?[a-zA-Z]*?$/.test(validName);
+  return nameIsValid;
 
-  const validEmail = nameInput.value[1];
-  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+}
 
-  if (validEmail === emailRegex) {
-    console.log(validName);
+/* Helper function to validate email input */
+const emailValidator = () => {
+
+  const validEmail = emailInput.value; 
+  const emailIsValid = /^[^@]+@[^@.]+\.[a-z]+$/i.test(validEmail);;
+  return emailIsValid;
+
+}
+
+const eventValidator = () => {
+  
+    const validEvent = activitiesTotal > 0;
+    return validEvent;
+  
+}
+
+const cardValidator = () => {
+  
+  const validCard = paymentMethod.value === 'credit card';
+  const cardNumberIsValid = /^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/.test(validCard);
+  const zipCodeIsValid = /^\d{5}(?:[- ]?\d{4})?$/.test(zipCode);
+  const cvvIsValid = /^\d{3}$/.test(cvvNumber);
+  console.log(cardNumberIsValid && zipCodeIsValid && cvvIsValid);
+  return cardNumberIsValid && zipCodeIsValid && cvvIsValid;
+}
+
+/* Submit listener on the form element */
+formElement.addEventListener('submit', e => {
+
+  nameValidator();
+  emailValidator();
+  eventValidator();
+  cardValidator();
+
+  
+  e.preventDefault();
+ 
+  if (!nameValidator() | !emailValidator() | !eventValidator()) {
+    console.log('Form submission prevented');
   }
-  event.preventDefault()
 
+  // Submit handler test log - Feel free to delete this or comment it out
+  console.log('Submit handler is functional!');
 });
-
 
 
 /*
