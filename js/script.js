@@ -1,7 +1,7 @@
 // Sets default focus property on the name input field.
 
-const nameInput = document.getElementById('name').focus();
-
+const nameInput = document.getElementById('name');
+nameInput.focus();
 // JOB ROLE SECTION
 
 const jobRole = document.getElementById('title');
@@ -59,13 +59,7 @@ activities.addEventListener('change', (event) => {
   activitiesCost.innerHTML = `Total: $${activitiesTotal}`;
 });
 
-/*
-PAYMENT INFO SECTION
-
-The credit card payment option should be selected for the user by default. So when the form first loads, "Credit Card" should be displayed in the "I'm going to pay with" <select> element, and the credit card payment section should be the only payment section displayed in the form’s UI. And when the user selects one of the payment options from the "I'm going to pay with" drop down menu, the form should update to display only the chosen payment method section.
-
-* Program the "I'm going to pay with" <select> element to listen for user changes. When a change is detected, hide all payment sections in the form’s UI except the selected one.
-*/
+//PAYMENT INFO SECTION
 
 const paymentMethod = document.getElementById('payment');
 const paymentOptions = document.querySelectorAll('#payment option');
@@ -80,32 +74,23 @@ console.log(paymentOptions);
 
 paymentMethod.childNodes[3].selected = true;
 
-// paymentMethod.addEventListener('change', (event) => {
+paymentMethod.addEventListener('change', (event) => {
 
-//   if (event.target.value === 'paypal') {
-//     credit.style.display = 'none';
-//     paypal.style.display = 'block';
-//     bitcoin.style.display = 'none';
-//   } else if (event.target.value === 'bitcoin') {
-//     credit.style.display = 'none';
-//     paypal.style.display = 'none';
-//     bitcoin.style.display = 'block';
-//   } else {
-//     credit.style.display = 'block';
-//     bitcoin.style.display = 'none';
-//     paypal.style.display = 'none';
-//   }
-// });
-
-paymentMethod.addEventListener('change', (e) => {
-  for(let i = 0; i < paymentOptions.length; i++) {
-    if(paymentOptions === e.target.value) {
-      `${paymentOptions[i]}`.style.display = 'block';
-    } else {
-      `${paymentOptions[i]}`.style.display = 'none';
-    }
+  if (event.target.value === 'paypal') {
+    credit.style.display = 'none';
+    paypal.style.display = 'block';
+    bitcoin.style.display = 'none';
+  } else if (event.target.value === 'bitcoin') {
+    credit.style.display = 'none';
+    paypal.style.display = 'none';
+    bitcoin.style.display = 'block';
+  } else {
+    credit.style.display = 'block';
+    bitcoin.style.display = 'none';
+    paypal.style.display = 'none';
   }
 });
+
 /*
 FORM VALIDATION
 Users shouldn’t be able to submit a form without the required information, or with invalid information. To prevent that from happening, avoid using plugins, libraries, snippets or the built-in HTML5 validation, and create your own custom form validation.
@@ -124,6 +109,37 @@ Note:
 - Only call `preventDefault` on the `event` object if one or more of the required fields is invalid.
 Pro Tip:A recommended approach is to create helper functions for each of the required fields to be validated. For example, for the "Name" field, a function could check the "Name" field’s value. If it equals an empty string or only blank spaces, the function could log out a helpful statement and return false. Otherwise it would return true. And then in the `submit` event listener, you could call that helper function and check what it returns: if it returns false, you would prevent the form from submitting. Otherwise, you would avoid preventing form submission, and allow the `submit` handler to either submit or move onto checking the next required field.
 */
+const emailInput = document.getElementById('email');
+const cardNumber = document.getElementById('cc-num');
+const zipCode = document.getElementById('zip');
+const cvvNumber = document.getElementById('cvv');
+const formElement = document.getElementsByTagName('form')[0];
+
+console.log(nameInput);
+console.log(emailInput);
+console.log(activities);
+console.log(cardNumber);
+console.log(zipCode);
+console.log(cvvNumber);
+console.log(formElement);
+
+
+formElement.addEventListener('submit', (event) => {
+
+  const validName = emailInput.value[1];
+  const nameRegex = /(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/;
+
+  const validEmail = nameInput.value[1];
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if (validEmail === emailRegex) {
+    console.log(validName);
+  }
+  event.preventDefault()
+
+});
+
+
 
 /*
 A11Y 
